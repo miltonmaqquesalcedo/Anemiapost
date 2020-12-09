@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA6CEE8F-5CAC-4879-A491-0DA16529E12A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoAnemia</RootNamespace>
+    <AssemblyName>ProyectoAnemia</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44394</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AdminDoctor\Cuestionario.aspx" />
+    <Content Include="AdminDoctor\Inicio.aspx" />
+    <Content Include="AdminDoctor\Pregunta.aspx" />
+    <Content Include="Administracion\css\bootstrap.min.css" />
+    <Content Include="Administracion\css\now-ui-dashboard.css" />
+    <Content Include="Administracion\css\now-ui-dashboard.min.css" />
+    <Content Include="Administracion\demo\demo.css" />
+    <Content Include="Administracion\demo\demo.js" />
+    <Content Include="Administracion\img\apple-icon.png" />
+    <Content Include="Administracion\img\bg5.jpg" />
+    <Content Include="Administracion\img\default-avatar.png" />
+    <Content Include="Administracion\img\favicon.png" />
+    <Content Include="Administracion\img\header.jpg" />
+    <Content Include="Administracion\img\mike.jpg" />
+    <Content Include="Administracion\img\now-logo.png" />
+    <Content Include="Administracion\img\now-ui-dashboard.gif" />
+    <Content Include="Administracion\js\core\bootstrap.min.js" />
+    <Content Include="Administracion\js\core\jquery.min.js" />
+    <Content Include="Administracion\js\core\popper.min.js" />
+    <Content Include="Administracion\js\now-ui-dashboard.js" />
+    <Content Include="Administracion\js\now-ui-dashboard.min.js" />
+    <Content Include="Administracion\js\plugins\bootstrap-notify.js" />
+    <Content Include="Administracion\js\plugins\chartjs.min.js" />
+    <Content Include="Administracion\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="AdminDoctor\Diagnostico.aspx" />
+    <Content Include="AdminPaciente\Inicio.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="HistDetH\ActualizarDetalleHistoria.aspx" />
+    <Content Include="HistDetH\DetalleDiagnostico.aspx" />
+    <Content Include="HistDetH\DetalleHistoria.aspx" />
+    <Content Include="AdminDoctor\DiagnosticarDetalle.aspx" />
+    <Content Include="HistDetH\Historia.aspx" />
+    <Content Include="HistDetH\Prueba.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="HistDetH\ListadoHistorias.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="HistDetH\MostrarDetalleHistoria.aspx" />
+    <Content Include="Plantilla\css\animate.css" />
+    <Content Include="Plantilla\css\bootstrap.min.css" />
+    <Content Include="Plantilla\css\custom.css" />
+    <Content Include="Plantilla\css\flaticon.css" />
+    <Content Include="Plantilla\css\font-awesome.min.css" />
+    <Content Include="Plantilla\css\magnific-popup.css" />
+    <Content Include="Plantilla\css\pogo-slider.min.css" />
+    <Content Include="Plantilla\css\responsive.css" />
+    <Content Include="Plantilla\css\responsiveslides.css" />
+    <Content Include="Plantilla\css\style.css" />
+    <Content Include="Plantilla\css\timeline.css" />
+    <Content Include="Plantilla\fonts\Flaticon.svg" />
+    <Content Include="Plantilla\fonts\fontawesome-webfont.svg" />
+    <Content Include="Plantilla\images\buscar.svg" />
+    <Content Include="Plantilla\images\chequeo.svg" />
+    <Content Include="Plantilla\images\historia-clinica %281%29.svg" />
+    <Content Include="Plantilla\images\historia-clinica.svg" />
+    <Content Include="Plantilla\images\loader.gif" />
+    <Content Include="Plantilla\images\prueba-de-recuento-de-sangre.svg" />
+    <Content Include="Plantilla\images\receta1.png" />
+    <Content Include="Plantilla\images\receta2.png" />
+    <Content Include="Plantilla\images\receta3.png" />
+    <Content Include="Plantilla\images\receta5.png" />
+    <Content Include="Plantilla\images\receta6.png" />
+    <Content Include="Plantilla\images\receta7.png" />
+    <Content Include="Plantilla\images\receta8.png" />
+    <Content Include="Plantilla\images\search_icon.png" />
+    <Content Include="Plantilla\images\social1.png" />
+    <Content Include="Plantilla\images\social2.png" />
+    <Content Include="Plantilla\images\social3.png" />
+    <Content Include="Plantilla\img\banner-img.jpg" />
+    <Content Include="Plantilla\img\banner-img1.jpg" />
+    <Content Include="Plantilla\img\banner-img2.jpg" />
+    <Content Include="Plantilla\img\f_logo.png" />
+    <Content Include="Plantilla\img\icon-1.png" />
+    <Content Include="Plantilla\img\icon-2.png" />
+    <Content Include="Plantilla\img\icon-3.png" />
+    <Content Include="Plantilla\img\icon-4.png" />
+    <Content Include="Plantilla\img\icon-5.png" />
+    <Content Include="Plantilla\img\icon-6.png" />
+    <Content Include="Plantilla\img\img-2png.png" />
+    <Content Include="Plantilla\img\img-7.png" />
+    <Content Include="Plantilla\img\img-8.png" />
+    <Content Include="Plantilla\img\img-9.png" />
+    <Content Include="Plantilla\img\logo.png" />
+    <Content Include="Plantilla\js\bootstrap.min.js" />
+    <Content Include="Plantilla\js\contact-form-script.js" />
+    <Content Include="Plantilla\js\custom.js" />
+    <Content Include="Plantilla\js\form-validator.min.js" />
+    <Content Include="Plantilla\js\images-loded.min.js" />
+    <Content Include="Plantilla\js\isotope.min.js" />
+    <Content Include="Plantilla\js\jquery.magnific-popup.min.js" />
+    <Content Include="Plantilla\js\jquery.min.js" />
+    <Content Include="Plantilla\js\jquery.pogo-slider.min.js" />
+    <Content Include="Plantilla\js\popper.min.js" />
+    <Content Include="Plantilla\js\slider-index.js" />
+    <Content Include="Plantilla\js\smoothscroll.js" />
+    <Content Include="RegistroDoctor.aspx" />
+    <Content Include="RegistroPaciente.aspx" />
+    <Content Include="RegistroUsuario.aspx" />
+    <Content Include="Reloj\estilos.css" />
+    <Content Include="Reloj\reloj.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="BDAnemia.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BDAnemia.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Administracion\css\bootstrap.min.css.map" />
+    <Content Include="Administracion\css\now-ui-dashboard.css.map" />
+    <Content Include="Administracion\fonts\nucleo-license.md" />
+    <Content Include="Administracion\fonts\nucleo-outline.eot" />
+    <Content Include="Administracion\fonts\nucleo-outline.ttf" />
+    <Content Include="Administracion\fonts\nucleo-outline.woff" />
+    <Content Include="Administracion\fonts\nucleo-outline.woff2" />
+    <Content Include="Administracion\js\now-ui-dashboard.js.map" />
+    <Content Include="Administracion\scss\now-ui-dashboard.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\cards\_card-chart.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\cards\_card-map.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\cards\_card-plain.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\cards\_card-user.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_buttons.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_cards.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_dropdown.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_inputs.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_page-header.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_sidebar.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_transparency.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\mixins\_vendor-prefixes.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\plugins\_plugin-animate-bootstrap-notify.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\plugins\_plugin-perfect-scrollbar.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_alerts.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_buttons.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_cards.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_checkboxes-radio.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_dropdown.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_fixed-plugin.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_footers.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_images.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_inputs.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_misc.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_mixins.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_navbar.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_nucleo-outline.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_page-header.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_responsive.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_sidebar-and-main-panel.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_tables.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_typography.scss" />
+    <Content Include="Administracion\scss\now-ui-dashboard\_variables.scss" />
+    <None Include="BDAnemia.dbml.layout">
+      <DependentUpon>BDAnemia.dbml</DependentUpon>
+    </None>
+    <Content Include="Plantilla\fonts\Flaticon.eot" />
+    <Content Include="Plantilla\fonts\Flaticon.ttf" />
+    <Content Include="Plantilla\fonts\Flaticon.woff" />
+    <Content Include="Plantilla\fonts\fontawesome-webfont.eot" />
+    <Content Include="Plantilla\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Plantilla\fonts\fontawesome-webfont.woff" />
+    <Content Include="Plantilla\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Plantilla\fonts\FontAwesome.otf" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\tinymce\icons\default\icons.js" />
+    <Content Include="Scripts\tinymce\icons\default\icons.min.js" />
+    <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\help\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\imagetools\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\quickbars\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\toc\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\content\dark\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\content\default\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\default\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\content\document\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\document\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\content\writer\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.inline.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.mobile.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.mobile.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.shadowdom.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.inline.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.mobile.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.mobile.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.shadowdom.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="Scripts\tinymce\themes\mobile\theme.js" />
+    <Content Include="Scripts\tinymce\themes\mobile\theme.min.js" />
+    <Content Include="Scripts\tinymce\themes\silver\theme.js" />
+    <Content Include="Scripts\tinymce\themes\silver\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Site.Master" />
+    <Content Include="Style-Login\css\main.css" />
+    <Content Include="Style-Login\css\util.css" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Style-Login\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Style-Login\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Style-Login\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Style-Login\images\icons\favicon.ico" />
+    <Content Include="Style-Login\js\main.js" />
+    <Content Include="Style-Login\vendor\animate\animate.css" />
+    <Content Include="Style-Login\vendor\animsition\css\animsition.css" />
+    <Content Include="Style-Login\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Style-Login\vendor\animsition\js\animsition.js" />
+    <Content Include="Style-Login\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Style-Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Style-Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Style-Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Style-Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Style-Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Style-Login\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Style-Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Style-Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Style-Login\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Style-Login\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Style-Login\vendor\daterangepicker\moment.js" />
+    <Content Include="Style-Login\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Style-Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Style-Login\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Style-Login\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Style-Login\vendor\select2\select2.css" />
+    <Content Include="Style-Login\vendor\select2\select2.js" />
+    <Content Include="Style-Login\vendor\select2\select2.min.css" />
+    <Content Include="Style-Login\vendor\select2\select2.min.js" />
+    <Content Include="VerificarDoctor.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminDoctor\Cuestionario.aspx.cs">
+      <DependentUpon>Cuestionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDoctor\Cuestionario.aspx.designer.cs">
+      <DependentUpon>Cuestionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDoctor\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDoctor\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDoctor\Diagnostico.aspx.cs">
+      <DependentUpon>Diagnostico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDoctor\Diagnostico.aspx.designer.cs">
+      <DependentUpon>Diagnostico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDoctor\Pregunta.aspx.cs">
+      <DependentUpon>Pregunta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDoctor\Pregunta.aspx.designer.cs">
+      <DependentUpon>Pregunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaciente\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaciente\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BDAnemia.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDAnemia.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistDetH\ActualizarDetalleHistoria.aspx.cs">
+      <DependentUpon>ActualizarDetalleHistoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistDetH\ActualizarDetalleHistoria.aspx.designer.cs">
+      <DependentUpon>ActualizarDetalleHistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistDetH\DetalleDiagnostico.aspx.cs">
+      <DependentUpon>DetalleDiagnostico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistDetH\DetalleDiagnostico.aspx.designer.cs">
+      <DependentUpon>DetalleDiagnostico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistDetH\DetalleHistoria.aspx.cs">
+      <DependentUpon>DetalleHistoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistDetH\DetalleHistoria.aspx.designer.cs">
+      <DependentUpon>DetalleHistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDoctor\DiagnosticarDetalle.aspx.cs">
+      <DependentUpon>DiagnosticarDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDoctor\DiagnosticarDetalle.aspx.designer.cs">
+      <DependentUpon>DiagnosticarDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HistDetH\Historia.aspx.cs">
+      <DependentUpon>Historia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistDetH\Historia.aspx.designer.cs">
+      <DependentUpon>Historia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistDetH\Prueba.aspx.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistDetH\Prueba.aspx.designer.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistDetH\ListadoHistorias.aspx.cs">
+      <DependentUpon>ListadoHistorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistDetH\ListadoHistorias.aspx.designer.cs">
+      <DependentUpon>ListadoHistorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistDetH\MostrarDetalleHistoria.aspx.cs">
+      <DependentUpon>MostrarDetalleHistoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistDetH\MostrarDetalleHistoria.aspx.designer.cs">
+      <DependentUpon>MostrarDetalleHistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroDoctor.aspx.cs">
+      <DependentUpon>RegistroDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroDoctor.aspx.designer.cs">
+      <DependentUpon>RegistroDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroPaciente.aspx.cs">
+      <DependentUpon>RegistroPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroPaciente.aspx.designer.cs">
+      <DependentUpon>RegistroPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VerificarDoctor.aspx.cs">
+      <DependentUpon>VerificarDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerificarDoctor.aspx.designer.cs">
+      <DependentUpon>VerificarDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Hemogramas\" />
+    <Folder Include="Perfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Style-Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Style-Login\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Style-Login\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Style-Login\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Style-Login\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Style-Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Style-Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\fonts\tinymce-mobile.woff" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\fonts\tinymce-mobile.woff" />
+    <Content Include="Scripts\tinymce\langs\readme.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\tinymce\tinymce.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49433</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44394/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

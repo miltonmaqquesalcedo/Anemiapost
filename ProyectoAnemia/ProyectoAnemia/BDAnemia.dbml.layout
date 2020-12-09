@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.75, 11.75" name="BDAnemia">
+  <DataContextMoniker Name="/BDAnemiaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d8a5bd3a-5920-4e89-9b9e-64177570348e" absoluteBounds="3, 8.625, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Alimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86c30575-2b04-4c58-b1c8-871c7aa8f52d" absoluteBounds="3.015, 9.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac7bb695-22a8-496d-a28d-517b95d49ad3" absoluteBounds="8.125, 6.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Cuestionario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0d354dd-a928-4496-ae3b-dad8842f1123" absoluteBounds="8.14, 6.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19c5decb-cd4c-45f9-b5fa-d565aa63c5d4" absoluteBounds="10.5, 4.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/BDAnemiaDataContext/DetalleHistoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7441ac59-c694-486d-9916-001a85bc7381" absoluteBounds="10.515, 4.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c743858-9cfa-4a1b-ba0d-47ce0e38f16c" absoluteBounds="7, 3.875, 2, 2.155499674479167">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Diagnostico" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f49274b-dd56-4a1e-ad87-be584f8fb2be" absoluteBounds="7.0150000000000006, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b5cebcdd-e44f-40a2-bc99-e0d6eb229ed0" absoluteBounds="5.375, 6.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Doctor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c68a928-7036-4ca6-9015-b27825287e57" absoluteBounds="5.3900000000000006, 6.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fbe3a10b-2de0-4e61-96ae-b16cb9b7574b" absoluteBounds="10.75, 9.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Historia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de927e3f-a7c4-43ae-93c4-604fa0767cfd" absoluteBounds="10.765, 10.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ea0dec9-3aa8-4131-85ba-a0bd44c9d3d2" absoluteBounds="12.375, 7.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Indice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0947812f-8f4c-4bf4-a3ad-7ce10483028a" absoluteBounds="12.39, 7.7100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e944142-822c-4fe5-91ed-e0bf93f9e05b" absoluteBounds="8.25, 8.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Paciente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1124592d-ff95-4d0d-9a09-a26f91b1b8a7" absoluteBounds="8.265, 8.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f37c3860-b1e5-41da-87bf-9f232ca5ddc7" absoluteBounds="5.375, 10.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Pregunta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d581526-0ae0-44a8-969a-f69b52303074" absoluteBounds="5.3900000000000006, 10.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59affe8b-197b-4a44-805d-d16775cb33ee" absoluteBounds="3.125, 3.75, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Receta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2152a74-f912-42ba-bbeb-967971622a5f" absoluteBounds="3.1400000000000006, 4.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33e16887-908c-417d-ad30-34b7b78f9c1e" absoluteBounds="13.5, 4.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Sintoma" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79b6e258-9899-4c90-aac9-4c3c9f665fed" absoluteBounds="13.515, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c588a0a-1679-4c09-803b-3a55d10ba8e4" absoluteBounds="2.375, 6.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="534dc438-f465-4324-b57e-a80f6ce58403" absoluteBounds="2.39, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5b792a4-3c2c-4b07-9bc2-6b94180b8ddd" absoluteBounds="13.125, 9.25, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/BDAnemiaDataContext/Valores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b450c6c-a4af-493d-90ae-12a09944e18d" absoluteBounds="13.14, 9.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.125 : 7.2131987421875); (11.203123 : 7.2131987421875); (11.203123 : 6.47280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Cuestionario/Cuestionario_DetalleHistoria" />
+      <nodes>
+        <classShapeMoniker Id="ac7bb695-22a8-496d-a28d-517b95d49ad3" />
+        <classShapeMoniker Id="19c5decb-cd4c-45f9-b5fa-d565aa63c5d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9 : 5.07774983723958); (10.5 : 5.07774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Diagnostico/Diagnostico_DetalleHistoria" />
+      <nodes>
+        <classShapeMoniker Id="8c743858-9cfa-4a1b-ba0d-47ce0e38f16c" />
+        <classShapeMoniker Id="19c5decb-cd4c-45f9-b5fa-d565aa63c5d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.375 : 7.16429768880208); (8.125 : 7.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Doctor/Doctor_Cuestionario" />
+      <nodes>
+        <classShapeMoniker Id="b5cebcdd-e44f-40a2-bc99-e0d6eb229ed0" />
+        <classShapeMoniker Id="ac7bb695-22a8-496d-a28d-517b95d49ad3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.1874995 : 6.25); (6.1874995 : 4.95274983723958); (7 : 4.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Doctor/Doctor_Diagnostico" />
+      <nodes>
+        <classShapeMoniker Id="b5cebcdd-e44f-40a2-bc99-e0d6eb229ed0" />
+        <classShapeMoniker Id="8c743858-9cfa-4a1b-ba0d-47ce0e38f16c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.96875 : 9.625); (11.96875 : 6.47280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Historia/Historia_DetalleHistoria" />
+      <nodes>
+        <classShapeMoniker Id="fbe3a10b-2de0-4e61-96ae-b16cb9b7574b" />
+        <classShapeMoniker Id="19c5decb-cd4c-45f9-b5fa-d565aa63c5d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 10.4142976888021); (10.25 : 10.4142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Historia/Historia_Paciente" />
+      <nodes>
+        <classShapeMoniker Id="fbe3a10b-2de0-4e61-96ae-b16cb9b7574b" />
+        <classShapeMoniker Id="3e944142-822c-4fe5-91ed-e0bf93f9e05b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.375 : 10.25); (7.75 : 9.875); (7.75 : 7.59019853320313); (8.125 : 7.59019853320313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Pregunta/Pregunta_Cuestionario" />
+      <nodes>
+        <classShapeMoniker Id="f37c3860-b1e5-41da-87bf-9f232ca5ddc7" />
+        <classShapeMoniker Id="ac7bb695-22a8-496d-a28d-517b95d49ad3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 4.35137491861979); (7 : 4.35137491861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Receta/Receta_Diagnostico" />
+      <nodes>
+        <classShapeMoniker Id="59affe8b-197b-4a44-805d-d16775cb33ee" />
+        <classShapeMoniker Id="8c743858-9cfa-4a1b-ba0d-47ce0e38f16c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.71875 : 8.625); (4.71875 : 6.2901025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Alimento/Alimento_Receta" />
+      <nodes>
+        <classShapeMoniker Id="d8a5bd3a-5920-4e89-9b9e-64177570348e" />
+        <classShapeMoniker Id="59affe8b-197b-4a44-805d-d16775cb33ee" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.5 : 5.34699625651042); (12.5 : 5.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Sintoma/Sintoma_DetalleHistoria" />
+      <nodes>
+        <classShapeMoniker Id="33e16887-908c-417d-ad30-34b7b78f9c1e" />
+        <classShapeMoniker Id="19c5decb-cd4c-45f9-b5fa-d565aa63c5d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 7.31814697265625); (5.375 : 7.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Usuario/Usuario_Doctor" />
+      <nodes>
+        <classShapeMoniker Id="6c588a0a-1679-4c09-803b-3a55d10ba8e4" />
+        <classShapeMoniker Id="b5cebcdd-e44f-40a2-bc99-e0d6eb229ed0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.375 : 8.0112939453125); (3.375 : 8.375); (5.125 : 8.375); (5.125 : 9.80930826822917); (5.25 : 9.80930826822917); (5.25 : 9.90465413411458); (8.25 : 9.90465413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAnemiaDataContext/Usuario/Usuario_Paciente" />
+      <nodes>
+        <classShapeMoniker Id="6c588a0a-1679-4c09-803b-3a55d10ba8e4" />
+        <classShapeMoniker Id="3e944142-822c-4fe5-91ed-e0bf93f9e05b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDAnemia" Class="BDAnemiaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-NK2NI72\SQLEXPRESS;Initial Catalog=BDAnemia;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BDAnemiaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Alimento" Member="Alimento">
+    <Type Name="Alimento">
+      <Column Name="IdAlimento" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="calorias" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="proteina" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="carbohidratos" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="grasas" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="hierro" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="vitaminas" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="Alimento_Receta" Member="Receta" ThisKey="IdAlimento" OtherKey="IdAlimento" Type="Receta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cuestionario" Member="Cuestionario">
+    <Type Name="Cuestionario">
+      <Column Name="IdCuestionario" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NroPreguntas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdDoctor" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IdPregunta" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="Cuestionario_DetalleHistoria" Member="DetalleHistoria" ThisKey="IdCuestionario" OtherKey="IdCuestionario" Type="DetalleHistoria" />
+      <Association Name="Doctor_Cuestionario" Member="Doctor" ThisKey="IdDoctor" OtherKey="IdDoctor" Type="Doctor" IsForeignKey="true" />
+      <Association Name="Pregunta_Cuestionario" Member="Pregunta" ThisKey="IdPregunta" OtherKey="IdPregunta" Type="Pregunta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetalleHistoria" Member="DetalleHistoria">
+    <Type Name="DetalleHistoria">
+      <Column Name="IdDetalleHistoria" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NroSintomas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hemograma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IdCuestionario" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IdDiagnostico" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IdSintoma" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IdHistoria" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="Cuestionario_DetalleHistoria" Member="Cuestionario" ThisKey="IdCuestionario" OtherKey="IdCuestionario" Type="Cuestionario" IsForeignKey="true" />
+      <Association Name="Diagnostico_DetalleHistoria" Member="Diagnostico" ThisKey="IdDiagnostico" OtherKey="IdDiagnostico" Type="Diagnostico" IsForeignKey="true" />
+      <Association Name="Historia_DetalleHistoria" Member="Historia" ThisKey="IdHistoria" OtherKey="IdHistoria" Type="Historia" IsForeignKey="true" />
+      <Association Name="Sintoma_DetalleHistoria" Member="Sintoma" ThisKey="IdSintoma" OtherKey="IdSintoma" Type="Sintoma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Diagnostico" Member="Diagnostico">
+    <Type Name="Diagnostico">
+      <Column Name="IdDiagnostico" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TipoAnemia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tratamiento" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IdReceta" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IdDoctor" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="Diagnostico_DetalleHistoria" Member="DetalleHistoria" ThisKey="IdDiagnostico" OtherKey="IdDiagnostico" Type="DetalleHistoria" />
+      <Association Name="Doctor_Diagnostico" Member="Doctor" ThisKey="IdDoctor" OtherKey="IdDoctor" Type="Doctor" IsForeignKey="true" />
+      <Association Name="Receta_Diagnostico" Member="Receta" ThisKey="IdReceta" OtherKey="IdReceta" Type="Receta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Doctor" Member="Doctor">
+    <Type Name="Doctor">
+      <Column Name="IdDoctor" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Foto" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="dni" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="FechaNac" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Distrito" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Especialidad" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CMP" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IdDiagnostico" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="Doctor_Cuestionario" Member="Cuestionario" ThisKey="IdDoctor" OtherKey="IdDoctor" Type="Cuestionario" />
+      <Association Name="Doctor_Diagnostico" Member="Diagnostico" ThisKey="IdDoctor" OtherKey="IdDoctor" Type="Diagnostico" />
+      <Association Name="Usuario_Doctor" Member="Usuario" ThisKey="IdUsuario" OtherKey="IdUsuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Historia" Member="Historia">
+    <Type Name="Historia">
+      <Column Name="IdHistoria" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Descripcioon" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdDetalleHistoria" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="Historia_DetalleHistoria" Member="DetalleHistoria" ThisKey="IdHistoria" OtherKey="IdHistoria" Type="DetalleHistoria" />
+      <Association Name="Historia_Paciente" Member="Paciente" ThisKey="IdHistoria" OtherKey="IdHistoria" Type="Paciente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Indice" Member="Indice">
+    <Type Name="Indice">
+      <Column Name="idIndice" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Estatura" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Peso" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Clasificacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Paciente" Member="Paciente">
+    <Type Name="Paciente">
+      <Column Name="IdPersona" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Foto" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Peso" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="dni" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Estatura" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="FechaNac" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Distrito" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdHistoria" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="Historia_Paciente" Member="Historia" ThisKey="IdHistoria" OtherKey="IdHistoria" Type="Historia" IsForeignKey="true" />
+      <Association Name="Usuario_Paciente" Member="Usuario" ThisKey="IdUsuario" OtherKey="IdUsuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pregunta" Member="Pregunta">
+    <Type Name="Pregunta">
+      <Column Name="IdPregunta" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="Pregunta_Cuestionario" Member="Cuestionario" ThisKey="IdPregunta" OtherKey="IdPregunta" Type="Cuestionario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Receta" Member="Receta">
+    <Type Name="Receta">
+      <Column Name="IdReceta" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tiempo" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Preparacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Video" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IdAlimento" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="Receta_Diagnostico" Member="Diagnostico" ThisKey="IdReceta" OtherKey="IdReceta" Type="Diagnostico" />
+      <Association Name="Alimento_Receta" Member="Alimento" ThisKey="IdAlimento" OtherKey="IdAlimento" Type="Alimento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sintoma" Member="Sintoma">
+    <Type Name="Sintoma">
+      <Column Name="IdSintoma" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Sintoma_DetalleHistoria" Member="DetalleHistoria" ThisKey="IdSintoma" OtherKey="IdSintoma" Type="DetalleHistoria" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contrasena" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Usuario_Doctor" Member="Doctor" ThisKey="IdUsuario" OtherKey="IdUsuario" Type="Doctor" />
+      <Association Name="Usuario_Paciente" Member="Paciente" ThisKey="IdUsuario" OtherKey="IdUsuario" Type="Paciente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Valores" Member="Valores">
+    <Type Name="Valores">
+      <Column Name="idValores" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Poblacion" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Normal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Leve" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Moderado" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Severo" Type="System.Single" DbType="Real" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spAgregarHistoria" Method="spAgregarHistoria">
+    <Parameter Name="fechaCreacion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="idPaciente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spAgregarHistoriaResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(29) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarHistorias" Method="spListarHistorias">
+    <ElementType Name="spListarHistoriasResult">
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Paciente" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="[Fecha Nacimiento]" Member="Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dni" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Ubigeo" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarHistoriaPaciente" Method="spListarHistoriaPaciente">
+    <Parameter Name="idPaciente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spListarHistoriaPacienteResult">
+      <Column Name="IdHistoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Paciente" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="[Fecha Nacimiento]" Member="Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dni" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Ubigeo" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarDetalleDoctorVisualizar" Method="spListarDetalleDoctorVisualizar">
+    <Parameter Name="idDetalleHistoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spListarDetalleDoctorVisualizarResult">
+      <Column Name="IdDetalleHistoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Paciente" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="[Fecha Nacimiento]" Member="Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dni" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Ubigeo" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Hemograma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NroSintomas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarDetalleHistoriaPaciente" Method="spListarDetalleHistoriaPaciente">
+    <Parameter Name="idHistoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spListarDetalleHistoriaPacienteResult">
+      <Column Name="IdDetalleHistoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NroSintomas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hemograma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Paciente" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="[Fecha Nacimiento]" Member="Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dni" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Ubigeo" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarDetalleHistoriaDoctor" Method="spListarDetalleHistoriaDoctor">
+    <Parameter Name="idCuestionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idDoctor" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spListarDetalleHistoriaDoctorResult">
+      <Column Name="IdDetalleHistoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NroSintomas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Hemograma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Paciente" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="[Fecha Nacimiento]" Member="Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dni" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Ubigeo" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAgregarDetalleHistoria" Method="spAgregarDetalleHistoria">
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="nroSintomas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hemograma" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="idCuestionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idHistoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spAgregarDetalleHistoriaResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarDoctorEspe" Method="spListarDoctorEspe">
+    <ElementType Name="spListarDoctorEspeResult">
+      <Column Name="IdDoctor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Doctor" Type="System.String" DbType="VarChar(124)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAgregarUsuario" Method="spAgregarUsuario">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="spAgregarUsuarioResult">
+      <Column Name="CodUser" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(28) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAgregarPaciente" Method="spAgregarPaciente">
+    <Parameter Name="Foto" Parameter="foto" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Sexo" Parameter="sexo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="Peso" Parameter="peso" Type="System.Single" DbType="Real" />
+    <Parameter Name="dni" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Estatura" Parameter="estatura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaNac" Parameter="fechaNac" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Distrito" Parameter="distrito" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Provincia" Parameter="provincia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spAgregarPacienteResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAgregarCuestionario" Method="spAgregarCuestionario">
+    <Parameter Name="NroPreguntas" Parameter="nroPreguntas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdDoctor" Parameter="idDoctor" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spAgregarCuestionarioResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spActualizarCuestionario" Method="spActualizarCuestionario">
+    <Parameter Name="IdCuestionario" Parameter="idCuestionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NroPreguntas" Parameter="nroPreguntas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdDoctor" Parameter="idDoctor" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spActualizarCuestionarioResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(23) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarCuestionario" Method="spListarCuestionario">
+    <ElementType Name="spListarCuestionarioResult">
+      <Column Name="IdCuestionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NroPreguntas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdDoctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spActualizarDiagnostico" Method="spActualizarDiagnostico">
+    <Parameter Name="IdDiagnostico" Parameter="idDiagnostico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripccion" Parameter="descripccion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="TipoAnemia" Parameter="tipoAnemia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tratamiento" Parameter="tratamiento" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="IdDoctor" Parameter="idDoctor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idDetalleHistoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spActualizarDiagnosticoResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(34) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAgregarDiagnostico" Method="spAgregarDiagnostico">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="TipoAnemia" Parameter="tipoAnemia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tratamiento" Parameter="tratamiento" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="IdDoctor" Parameter="idDoctor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdDetalleHistoria" Parameter="idDetalleHistoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spAgregarDiagnosticoResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarDiagnostico" Method="spListarDiagnostico">
+    <ElementType Name="spListarDiagnosticoResult">
+      <Column Name="IdDiagnostico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TipoAnemia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tratamiento" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IdDoctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spActualizarPregunta" Method="spActualizarPregunta">
+    <Parameter Name="IdPregunta" Parameter="idPregunta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="IdCuestionario" Parameter="idCuestionario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spActualizarPreguntaResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAgregarPregunta" Method="spAgregarPregunta">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="IdCuestionario" Parameter="idCuestionario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spAgregarPreguntaResult">
+      <Column Name="CodError" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarPregunta" Method="spListarPregunta">
+    <ElementType Name="spListarPreguntaResult">
+      <Column Name="IdPregunta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IdCuestionario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spBuscarPreguntaCu" Method="spBuscarPreguntaCu">
+    <Parameter Name="idDoctor" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spBuscarPreguntaCuResult">
+      <Column Name="IdPregunta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IdCuestionario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
